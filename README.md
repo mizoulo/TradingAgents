@@ -34,7 +34,8 @@
 > **Tip:** I've found `gemini-2.0-flash` to be a good balance of speed and quality for the analyst agents. For the final trading decision (Portfolio Manager), bumping up to `gemini-2.5-pro` noticeably improves reasoning quality if you have the quota.
 >
 > **Rate limiting note:** When running multiple analyst agents in parallel with the free Gemini tier, I occasionally hit 429 errors. Setting `max_debate_rounds` to `1` in the config helps reduce API calls significantly during experimentation.
+>
+> **Backtest tip:** When backtesting over a long date range, set `online_tools` to `False` in the config to avoid hammering live data APIs and to keep results reproducible. I usually pair this with a locally cached dataset.
 
 ## News
-- [2026-04] **TradingAgents v0.2.4** released with structured-output agents (Research Manager, Trader, Portfolio Manager), LangGraph checkpoint resume, persistent decision log, DeepSeek/Qwen/GLM/Azure provider support, Docker, and a Windows UTF-8 encoding fix. See [CHANGELOG.md](CHANGELOG.md) for the full list.
-- [2026-03] **TradingAgents v0.2.3** released with multi-language support, GPT-5.4 family models, unified model cata
+- [2026-04] **TradingAgents v0.2.4** released with structured-output agents (Research Manager, Trader, Portfolio Manager), LangGraph checkpoint resume, persistent decision log, DeepSee
