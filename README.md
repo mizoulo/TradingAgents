@@ -35,7 +35,6 @@
 >
 > **Rate limiting note:** When running multiple analyst agents in parallel with the free Gemini tier, I occasionally hit 429 errors. Setting `max_debate_rounds` to `1` in the config helps reduce API calls significantly during experimentation.
 >
-> **Backtest tip:** When backtesting over a long date range, set `online_tools` to `False` in the config to avoid hammering live data APIs and to keep results reproducible. I usually pair this with a locally cached dataset.
-
-## News
-- [2026-04] **TradingAgents v0.2.4** released with structured-output agents (Research Manager, Trader, Portfolio Manager), LangGraph checkpoint resume, persistent decision log, DeepSee
+> **Backtest tip:** When backtesting over a long date range, set `online_tools` to `False` in the config to avoid hammering live data APIs and to keep results reproducible. I usually pair this with a local CSV of OHLCV data exported from Yahoo Finance.
+>
+> **Token cost tip:** Setting `max_recur_limit` to `5` (down from the default `10`) cuts token usage roughly in half during multi-round analyst debates with no noticeable drop in signal quality for daily timeframes.
