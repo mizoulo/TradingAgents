@@ -35,6 +35,6 @@
 >
 > **Rate limiting note:** When running multiple analyst agents in parallel with the free Gemini tier, I occasionally hit 429 errors. Setting `max_debate_rounds` to `1` in the config helps reduce API calls significantly during experimentation.
 >
-> **Backtest tip:** When backtesting over a long date range, set `online_tools` to `False` in the config to avoid hammering live data APIs and to keep results reproducible. I usually pair this with a local CSV of OHLCV data exported from yfinance.
+> **Backtest tip:** When backtesting over a long date range, set `online_tools` to `False` in the config to avoid hammering live data APIs and to keep results reproducible. I usually pair this with a local cache of historical data fetched in a separate step.
 >
-> **Ticker watchlist:** My current focus tickers for experimentation are `NVDA`, `MSFT`, and `TSLA` — a mix of high-volatility and steadier names to stress-test the agents across different market conditions.
+> **Cost tracking tip:** Keep an eye on token usage — the news analyst agent tends to be the most token-hungry since it pulls in full article text. If you're watching quota, consider setting `selected_analysts` to exclude `"news"` during initial experiments and add it back once your setup is stable.
